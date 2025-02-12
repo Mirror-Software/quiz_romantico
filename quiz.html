@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Romântico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <header class="text-center py-5 bg-danger text-white">
+        <h1>Quiz Romântico ❤️</h1>
+        <p>Teste seu conhecimento sobre seu parceiro!</p>
+    </header>
+    
+    <section id="quiz" class="container my-5">
+        <div class="card shadow p-4">
+            <h2 class="text-center text-danger">Responda as perguntas</h2>
+            <p class="text-center fw-bold" id="parceiro-indicador">Parceiro 1 está respondendo, Parceiro 2 deve confirmar.</p>
+            <div id="perguntas-container">
+                <div class="pergunta">
+                    <p class="fw-bold">1. Qual é a comida favorita do seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta1" required>
+                    <button class="btn btn-success" onclick="verificarResposta(1, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(1, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">2. Qual foi o primeiro presente que você deu ao seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta2" required>
+                    <button class="btn btn-success" onclick="verificarResposta(2, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(2, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">3. Qual é a música que mais representa o casal?</p>
+                    <input type="text" class="form-control mb-2" id="resposta3" required>
+                    <button class="btn btn-success" onclick="verificarResposta(3, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(3, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">4. Onde foi o primeiro encontro de vocês?</p>
+                    <input type="text" class="form-control mb-2" id="resposta4" required>
+                    <button class="btn btn-success" onclick="verificarResposta(4, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(4, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">5. Qual foi a viagem mais marcante para vocês?</p>
+                    <input type="text" class="form-control mb-2" id="resposta5" required>
+                    <button class="btn btn-success" onclick="verificarResposta(5, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(5, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">6. Como seu parceiro gosta do café?</p>
+                    <input type="text" class="form-control mb-2" id="resposta6" required>
+                    <button class="btn btn-success" onclick="verificarResposta(6, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(6, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">7. Quem disse 'eu te amo' primeiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta7" required>
+                    <button class="btn btn-success" onclick="verificarResposta(7, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(7, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">8. Seu parceiro prefere filmes ou séries?</p>
+                    <input type="text" class="form-control mb-2" id="resposta8" required>
+                    <button class="btn btn-success" onclick="verificarResposta(8, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(8, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">9. Qual é o nome do melhor amigo do seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta9" required>
+                    <button class="btn btn-success" onclick="verificarResposta(9, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(9, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">10. O que faz seu parceiro rir sempre?</p>
+                    <input type="text" class="form-control mb-2" id="resposta10" required>
+                    <button class="btn btn-success" onclick="verificarResposta(10, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(10, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">11. Qual foi o primeiro apelido carinhoso que vocês usaram um para o outro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta11" required>
+                    <button class="btn btn-success" onclick="verificarResposta(11, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(11, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">12. Qual é a roupa preferida do seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta12" required>
+                    <button class="btn btn-success" onclick="verificarResposta(12, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(12, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">13. O que seu parceiro mais admira em você?</p>
+                    <input type="text" class="form-control mb-2" id="resposta13" required>
+                    <button class="btn btn-success" onclick="verificarResposta(13, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(13, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">14. Qual é o prato que seu parceiro cozinha melhor?</p>
+                    <input type="text" class="form-control mb-2" id="resposta14" required>
+                    <button class="btn btn-success" onclick="verificarResposta(14, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(14, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">15. Qual é o estilo musical favorito do seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta15" required>
+                    <button class="btn btn-success" onclick="verificarResposta(15, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(15, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">16. Seu parceiro prefere um jantar romântico ou um piquenique?</p>
+                    <input type="text" class="form-control mb-2" id="resposta16" required>
+                    <button class="btn btn-success" onclick="verificarResposta(16, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(16, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">17. Quem mais zanga na relação?</p>
+                    <input type="text" class="form-control mb-2" id="resposta17" required>
+                    <button class="btn btn-success" onclick="verificarResposta(17, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(17, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">18. Como foi o vosso primeiro dia?</p>
+                    <input type="text" class="form-control mb-2" id="resposta18" required>
+                    <button class="btn btn-success" onclick="verificarResposta(18, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(18, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">19. Trocaria o seu parceiro por dinheiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta19" required>
+                    <button class="btn btn-success" onclick="verificarResposta(19, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(19, false)">Errado (-1)</button>
+                </div>
+                <div class="pergunta d-none">
+                    <p class="fw-bold">20. Depois de tudo, casaria com o seu parceiro?</p>
+                    <input type="text" class="form-control mb-2" id="resposta20" required>
+                    <button class="btn btn-success" onclick="verificarResposta(20, true)">Certo (+1)</button>
+                    <button class="btn btn-danger" onclick="verificarResposta(20, false)">Errado (-1)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="resultado" class="container my-5 d-none">
+        <div class="card shadow p-4 bg-white text-center">
+            <h2 class="text-danger">Resultado do Quiz</h2>
+            <p id="mensagem-resultado" class="fw-bold"></p>
+        </div>
+    </section>
+    
+    <footer class="text-center py-3 bg-danger text-white">
+        <p>&copy; 2025 Quiz Romântico - Feito com ❤️ para casais felizes. Em desenvolvimento!</p>
+    </footer>
+    
+    <script>
+        let pontuacaoParceiro1 = 0;
+        let pontuacaoParceiro2 = 0;
+        let perguntaAtual = 0;
+        let parceiroAtual = 1;
+        const perguntas = document.querySelectorAll(".pergunta");
+
+        function verificarResposta(num, correto) {
+            if (correto) {
+                if (parceiroAtual === 1) {
+                    pontuacaoParceiro1++;
+                } else {
+                    pontuacaoParceiro2++;
+                }
+            } else {
+                if (parceiroAtual === 1) {
+                    pontuacaoParceiro1 = Math.max(0, pontuacaoParceiro1 - 1);
+                } else {
+                    pontuacaoParceiro2 = Math.max(0, pontuacaoParceiro2 - 1);
+                }
+            }
+            perguntas[perguntaAtual].classList.add("d-none");
+            perguntaAtual++;
+            parceiroAtual = parceiroAtual === 1 ? 2 : 1;
+            atualizarIndicador();
+            if (perguntaAtual < perguntas.length) {
+                perguntas[perguntaAtual].classList.remove("d-none");
+            } else {
+                mostrarResultado();
+            }
+        }
+
+        function atualizarIndicador() {
+            document.getElementById("parceiro-indicador").innerText = `Parceiro ${parceiroAtual} está respondendo, Parceiro ${parceiroAtual === 1 ? 2 : 1} deve confirmar.`;
+        }
+
+        function mostrarResultado() {
+            document.getElementById("quiz").classList.add("d-none");
+            document.getElementById("resultado").classList.remove("d-none");
+            let mensagem = "";
+            if (pontuacaoParceiro1 > pontuacaoParceiro2) {
+                mensagem = "O parceiro 1 conhece melhor o seu amor! ❤️";
+            } else if (pontuacaoParceiro2 > pontuacaoParceiro1) {
+                mensagem = "O parceiro 2 conhece melhor o seu amor! ❤️";
+            } else {
+                mensagem = "Empate! Ambos se conhecem igualmente bem! 💕";
+            }
+            document.getElementById("mensagem-resultado").innerText = mensagem;
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
